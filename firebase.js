@@ -1,12 +1,12 @@
 // Replace the config object below with your Firebase project's config.
 // Keep these keys in client code; they're safe to expose. Restrict access in Firebase Console.
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBsmeQU6fFFkROQvhbchDTfwxNmd-eIvV8",
+    authDomain: "thirdday-d10ad.firebaseapp.com",
+    projectId: "thirdday-d10ad",
+    storageBucket: "thirdday-d10ad.firebasestorage.app",
+    messagingSenderId: "251215364464",
+    appId: "1:251215364464:web:f12b9bc01c0f6f1e584fb5"
 };
 
 // Firebase v10 modular imports from CDN
