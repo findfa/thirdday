@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — AI Skills</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AI Skills</div>
+    <div class="spacer"></div>
+    <div id="user-pill" class="user-pill"></div>
+    <button id="logout" class="btn danger outline">Log out</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Welcome <span id="displayName">Student</span> 👋</h2>
+      <p class="muted">Your beginner-friendly AI learning path.</p>
+      <div class="controls">
+        <button id="generate" class="btn primary">Generate starter course list</button>
+        <button id="refresh" class="btn">Refresh</button>
+      </div>
+    </section>
+
+    <section class="grid" id="courses"></section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> AI Skills</footer>
+
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reset password — AI Skills</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container auth-container">
+    <h1>Reset your password</h1>
+    <form id="reset-form" class="card">
+      <label>Email <input type="email" id="reset-email" required autocomplete="email"/></label>
+      <button type="submit" class="btn primary">Send reset link</button>
+      <div id="reset-msg" class="success"></div>
+      <div id="reset-error" class="error"></div>
+    </form>
+    <p><a class="link" href="index.html">Back to sign in</a></p>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> AI Skills</footer>
+
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module">
+    import { auth, sendPasswordResetEmail } from './js/firebase.js';
+    const form = document.getElementById('reset-form');
+    const msg = document.getElementById('reset-msg');
+    const err = document.getElementById('reset-error');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = ''; err.textContent='';
+      const email = document.getElementById('reset-email').value.trim();
+      try {
+        await sendPasswordResetEmail(auth, email);
+        msg.textContent = 'Password reset email sent. Check your inbox.';
+      } catch (e) {
+        err.textContent = e.message;
+      }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
